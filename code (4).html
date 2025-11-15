@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Community Page</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #f7f7f7;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* --- CARD STYLING FIX --- */
+    .card-community {
+      padding: 20px;
+      border-radius: 1rem;
+      display: flex;
+      gap: 18px;
+      background: #fff;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 4px;
+      color: white;
+    }
+
+    .avatar.addiction { background-color: #2196f3; }
+    .avatar.chronic { background-color: #fbc02d; }
+
+    .location {
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin-left: 6px;
+    }
+
+    .room-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .room-description {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .peers-count {
+      font-size: 0.85rem;
+      color: #8a8a8a;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .badge-closed, .badge-open {
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .badge-closed {
+      background-color: #ff6b6b;
+      color: #fff;
+    }
+
+    .badge-open {
+      background-color: #28c76f;
+      color: #fff;
+    }
+
+    .gabung-link {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #4a90e2;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .gabung-link:hover {
+      text-decoration: underline;
+    }
+
+    .gabung-disabled {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #9ca3af;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: not-allowed;
+      text-decoration: none;
+    }
+
+    .text-gradient {
+      background: linear-gradient(90deg,#0061ff,#60efff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 24px 20px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+      text-align: center;
+    }
+
+    .gradient-banner {
+      border-radius: 1rem;
+      padding: 20px 24px;
+      color: white;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(90deg, #ff8b73, #fbb07a);
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Placeholder untuk navbar yang akan dimuat dari navbar.html -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Script untuk memuat navbar dari navbar.html -->
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar:', error));
+  </script>
+
+  <main class="container mb-5">
+    <h1 class="text-center fw-bold mb-4 display-5">
+      <span class="text-gradient">Community</span>
+    </h1>
+
+    <div class="info-card">
+      <h5 class="mb-3 fw-bold">Thanks for offering your support!</h5>
+      <p class="mb-4">
+        Once a room opens that matches your experience,<br>we'll notify you.
+      </p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <button class="btn btn-success px-4 py-2">Open your own room</button>
+      </div>
+    </div>
+
+    <div class="gradient-banner text-center">
+      <h5>We need each other most during these challenging times.</h5>
+      <p>Open your very own room and talk it out.</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="d-flex flex-column gap-3">
+
+      <div class="card-community shadow-sm">
+        <div class="avatar addiction"><i class="bi bi-capsule"></i></div>
+        <div class="flex-grow-1">
+          <div class="d-flex align-items-center mb-1">
+            <h5 class="mb-0 fw-bold">Theldk, 21</h5>
+            <span class="location">• Netherlands</span>
+          </div>
+          <div class="text-primary small fw-semibold mb-2">Addiction</div>
+          <div class="room-title">Theldk's room</div>
+          <p class="room-description">Honestly, I can’t remember the last time I slept peacefully. Setiap malam rasanya seperti pertarungan baru—tidur sebentar, kebangun lagi, terus pikiran langsung lari ke hal-hal yang nggak penting. I keep telling myself that I’m fine, but the exhaustion hits me the moment I open my eyes. Anyone else feeling like their brain just won’t shut down no matter how tired their body is?.</p>
+          <div class="d-flex align-items-center">
+            <div class="peers-count"><i class="bi bi-people-fill"></i> 0/40 anggota</div>
+            <span class="badge-closed ms-3">Closed</span>
+            <span class="gabung-disabled ms-auto">Gabung <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-community shadow-sm">
+        <div class="avatar addiction"><i class="bi bi-capsule"></i></div>
+        <div class="flex-grow-1">
+          <div class="d-flex align-items-center mb-1">
+            <h5 class="mb-0 fw-bold">Cherry, 34</h5>
+            <span class="location">• United States</span>
+          </div>
+          <div class="text-primary small fw-semibold mb-2">Addiction</div>
+          <div class="room-title">Cherry's room</div>
+          <p class="room-description">My husband is an alcoholic and I'm tired of feeling unsafe.</p>
+          <div class="d-flex align-items-center">
+            <div class="peers-count"><i class="bi bi-people-fill"></i> 0/50 anggota</div>
+            <span class="badge-open ms-3">Open</span>
+            <a href="#" class="gabung-link ms-auto">Gabung <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-community shadow-sm">
+        <div class="avatar chronic"><i class="bi bi-heart-pulse-fill"></i></div>
+        <div class="flex-grow-1">
+          <div class="d-flex align-items-center mb-1">
+            <h5 class="mb-0 fw-bold">Gunni, 60</h5>
+            <span class="location">• Iceland</span>
+          </div>
+          <div class="text-primary small fw-semibold mb-2">Chronic Illness</div>
+          <div class="room-title">Gunni's room</div>
+          <p class="room-description">I have been very ill for 8 years and it is getting worse.</p>
+          <div class="d-flex align-items-center">
+            <div class="peers-count"><i class="bi bi-people-fill"></i> 0/25 anggota</div>
+            <span class="badge-closed ms-3">Closed</span>
+            <span class="gabung-disabled ms-auto">Gabung <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kartu Tambahan 1 -->
+      <div class="card-community shadow-sm">
+        <div class="avatar addiction"><i class="bi bi-capsule"></i></div>
+        <div class="flex-grow-1">
+          <div class="d-flex align-items-center mb-1">
+            <h5 class="mb-0 fw-bold">Alex, 28</h5>
+            <span class="location">• Canada</span>
+          </div>
+          <div class="text-primary small fw-semibold mb-2">Addiction</div>
+          <div class="room-title">Alex's room</div>
+          <p class="room-description">Struggling with addiction, looking for support and shared experiences.</p>
+          <div class="d-flex align-items-center">
+            <div class="peers-count"><i class="bi bi-people-fill"></i> 5/30 anggota</div>
+            <span class="badge-open ms-3">Open</span>
+            <a href="#" class="gabung-link ms-auto">Gabung <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kartu Tambahan 2 -->
+      <div class="card-community shadow-sm">
+        <div class="avatar chronic"><i class="bi bi-heart-pulse-fill"></i></div>
+        <div class="flex-grow-1">
+          <div class="d-flex align-items-center mb-1">
+            <h5 class="mb-0 fw-bold">Maria, 45</h5>
+            <span class="location">• Spain</span>
+          </div>
+          <div class="text-primary small fw-semibold mb-2">Chronic Illness</div>
+          <div class="room-title">Maria's room</div>
+          <p class="room-description">Living with chronic pain, sharing tips and encouragement.</p>
+          <div class="d-flex align-items-center">
+            <div class="peers-count"><i class="bi bi-people-fill"></i> 10/20 anggota</div>
+            <span class="badge-open ms-3">Open</span>
+            <a href="#" class="gabung-link ms-auto">Gabung <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kartu Tambahan 3 -->
+      <div class="card-community shadow-sm">
+        <div class="avatar addiction"><i class="bi bi-capsule"></i></div>
+        <div class="flex-grow-1">
+          <div class="d-flex align-items-center mb-1">
+            <h5 class="mb-0 fw-bold">John, 52</h5>
+            <span class="location">• Australia</span>
+          </div>
+          <div class="text-primary small fw-semibold mb-2">Addiction</div>
+          <div class="room-title">John's room</div>
+          <p class="room-description">Recovery journey, open to all who need a listening ear.</p>
+          <div class="d-flex align-items-center">
+            <div class="peers-count"><i class="bi bi-people-fill"></i> 2/35 anggota</div>
+            <span class="badge-closed ms-3">Closed</span>
+            <span class="gabung-disabled ms-auto">Gabung <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kartu Tambahan 4 -->
+      <div class="card-community shadow-sm">
+        <div class="avatar chronic"><i class="bi bi-heart-pulse-fill"></i></div>
+        <div class="flex-grow-1">
+          <div class="d-flex align-items-center mb-1">
+            <h5 class="mb-0 fw-bold">Lisa, 38</h5>
+            <span class="location">• Germany</span>
+          </div>
+          <div class="text-primary small fw-semibold mb-2">Chronic Illness</div>
+          <div class="room-title">Lisa's room</div>
+          <p class="room-description">Dealing with fibromyalgia, let's support each other.</p>
+          <div class="d-flex align-items-center">
+            <div class="peers-count"><i class="bi bi-people-fill"></i> 8/40 anggota</div>
+            <span class="badge-open ms-3">Open</span>
+            <a href="#" class="gabung-link ms-auto">Gabung <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kartu Tambahan 5 -->
+      <div class="card-community shadow-sm">
+        <div class="avatar addiction"><i class="bi bi-capsule"></i></div>
+        <div class="flex-grow-1">
+          <div class="d-flex align-items-center mb-1">
+            <h5 class="mb-0 fw-bold">Tom, 30</h5>
+            <span class="location">• UK</span>
+          </div>
+          <div class="text-primary small fw-semibold mb-2">Addiction</div>
+          <div class="room-title">Tom's room</div>
+          <p class="room-description">Overcoming challenges, sharing stories and hope.</p>
+          <div class="d-flex align-items-center">
+            <div class="peers-count"><i class="bi bi-people-fill"></i> 4/45 anggota</div>
+            <span class="badge-closed ms-3">Closed</span>
+            <span class="gabung-disabled ms-auto">Gabung <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer-->
+  <footer class="py-4 mt-auto">
+    <div class="container px-5">
+      <div
+        class="row align-items-center justify-content-between flex-column flex-sm-row"
+      >
+        <div class="col-auto">
+          <div class="small m-0 text-muted">Copyright &copy; Sleepio 2025</div>
+        </div>
+        <div class="col-auto">
+          <a class="small text-muted" href="#!">Privacy</a>
+          <span class="mx-1">&middot;</span>
+          <a class="small text-muted" href="#!">Terms</a>
+          <span class="mx-1">&middot;</span>
+          <a class="small text-muted" href="#!">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
