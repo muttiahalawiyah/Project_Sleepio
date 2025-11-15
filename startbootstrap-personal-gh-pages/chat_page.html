@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Room Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+  <link rel="stylesheet" href="css/chat_page.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+  <script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar-container").innerHTML = data;
+    });
+    </script>
+
+<div id="chat">
+
+  <!-- Notifikasi Join Room -->
+<div class="chat__conversation-board__notification">
+  <span class="notification-text"> Atria, Nibras, and Firly joined this room </span>
+</div>
+
+    <!-- Message 1 -->
+    <div class="chat__conversation-board__message-container">
+      <div class="chat__conversation-board__message__person">
+        <div class="chat__conversation-board__message__person__avatar">
+          <img src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png" alt="Atria">
+        </div>
+      </div>
+
+      <div class="chat__conversation-board__message__context">
+        <span class="chat__conversation-board__message__person__nickname">Atria</span>
+        <div class="chat__conversation-board__message__bubble">
+          <span>I've been awake for 36 hours now and I'm scared to even try sleeping. My mind just races the moment I lie down.'</span>
+        </div>
+      </div>
+
+      <div class="chat__conversation-board__message__options">
+        <button class="btn-icon chat__conversation-board__message__option-button option-item emoji-button">
+          <svg class="feather feather-smile" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+          </svg>
+        </button>
+
+        <button class="btn-icon chat__conversation-board__message__option-button option-item more-button">
+          <svg class="feather feather-more-horizontal" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <circle cx="12" cy="12" r="1"></circle>
+            <circle cx="19" cy="12" r="1"></circle>
+            <circle cx="5" cy="12" r="1"></circle>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Message 2 -->
+    <div class="chat__conversation-board__message-container">
+      <div class="chat__conversation-board__message__person">
+        <div class="chat__conversation-board__message__person__avatar">
+          <img src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png" alt="Sayyidah">
+        </div>
+      </div>
+
+      <div class="chat__conversation-board__message__context">
+        <span class="chat__conversation-board__message__person__nickname">Sayyidah</span>
+        <div class="chat__conversation-board__message__bubble">
+          <span>I feel you! Last night I counted 4 different times I woke up. Each time my brain started replaying every awkward thing I've ever said.</span>
+        </div>
+      </div>
+
+      <div class="chat__conversation-board__message__options">
+        <button class="btn-icon chat__conversation-board__message__option-button option-item emoji-button">
+          <svg class="feather feather-smile" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+          </svg>
+        </button>
+
+        <button class="btn-icon chat__conversation-board__message__option-button option-item more-button">
+          <svg class="feather feather-more-horizontal" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <circle cx="12" cy="12" r="1"></circle>
+            <circle cx="19" cy="12" r="1"></circle>
+            <circle cx="5" cy="12" r="1"></circle>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Message 3 -->
+    <div class="chat__conversation-board__message-container">
+      <div class="chat__conversation-board__message__person">
+        <div class="chat__conversation-board__message__person__avatar">
+          <img src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png" alt="Nibras">
+        </div>
+      </div>
+
+      <div class="chat__conversation-board__message__context">
+        <span class="chat__conversation-board__message__person__nickname">Nibras</span>
+        <div class="chat__conversation-board__message__bubble"><span>Have you guys tried the 4-7-8 breathing technique? It doesn't always work for me, but sometimes it helps quiet my thoughts a bit.</span></div>
+      </div>
+
+      <div class="chat__conversation-board__message__options">
+        <button class="btn-icon chat__conversation-board__message__option-button option-item emoji-button">
+          <svg class="feather feather-smile" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+          </svg>
+        </button>
+
+        <button class="btn-icon chat__conversation-board__message__option-button option-item more-button">
+          <svg class="feather feather-more-horizontal" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <circle cx="12" cy="12" r="1"></circle>
+            <circle cx="19" cy="12" r="1"></circle>
+            <circle cx="5" cy="12" r="1"></circle>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Message 4 -->
+    <div class="chat__conversation-board__message-container reversed">
+      <div class="chat__conversation-board__message__person">
+        <div class="chat__conversation-board__message__person__avatar">
+          <img src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png" alt="Firly">
+        </div>
+      </div>
+
+      <div class="chat__conversation-board__message__context1">
+        <span class="chat__conversation-board__message__person__nickname">Firly</span>
+        <div class="chat__conversation-board__message__bubble">
+          <span>I've tried that. Sometimes it helps, sometimes my brain just fights it. What helps me more is knowing I'm not alone in this struggle.</span>
+        </div>
+      </div>
+
+      <div class="chat__conversation-board__message__options">
+        <button class="btn-icon chat__conversation-board__message__option-button option-item emoji-button">
+          <svg class="feather feather-smile" xmlns="http://www.w3.org/2000/svg" width="24" height="24"></svg>
+        </button>
+
+        <button class="btn-icon chat__conversation-board__message__option-button option-item more-button">
+          <svg class="feather feather-more-horizontal" xmlns="http://www.w3.org/2000/svg" width="24" height="24"></svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="chat__conversation-panel">
+    <div class="chat__conversation-panel__container">
+
+      <button class="chat__conversation-panel__button panel-item btn-icon add-file-button">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+
+      <button class="chat__conversation-panel__button panel-item btn-icon emoji-button">
+        <i class="fa-solid fa-face-smile"></i>
+      </button>
+
+      <input class="chat__conversation-panel__input panel-item" placeholder="Type a message..." />
+
+      <button class="chat__conversation-panel__button panel-item btn-icon send-message-button">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+
+    </div>
+  </div>
+
+</div>
+
+<footer class="bg-white py-4 mt-auto">
+  <div class="container px-5">
+    <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+      <div class="col-auto">
+        <div class="small m-0">Copyright © Your Website 2023</div>
+      </div>
+      <div class="col-auto">
+        <a class="small" href="#!">Privacy</a>
+        <span class="mx-1">·</span>
+        <a class="small" href="#!">Terms</a>
+        <span class="mx-1">·</span>
+        <a class="small" href="#!">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
