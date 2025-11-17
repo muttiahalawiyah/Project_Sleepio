@@ -13,10 +13,24 @@
 
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+   <script>
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+        });
+    </script>
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
 
   <style>
     body {
-      background-color: #f7f7f7;
+      background-color: #12345A;
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
@@ -107,6 +121,11 @@
       text-decoration: underline;
     }
 
+       .text-muted {
+  --bs-text-opacity: 1;
+  color: #f7f6f5 !important;
+    }
+
     .gabung-disabled {
       font-weight: 600;
       font-size: 0.9rem;
@@ -143,16 +162,9 @@
       box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
     }
   </style>
+  <!-- Navigation-->
+      <div id="navbar"></div>
 </head>
-
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 mb-4">
-    <div class="container">
-      <a class="navbar-brand fw-bold fs-4" href="#">
-        <img src="Sleepio-Logo-Mid-Blue.png" style="height: 40px;">
-      </a>
-    </div>
-  </nav>
 
   <main class="container mb-5">
     <h1 class="text-center fw-bold mb-4 display-5">
@@ -208,9 +220,7 @@
           <div class="d-flex align-items-center">
             <div class="peers-count"><i class="bi bi-people-fill"></i> 0/50 anggota</div>
             <span class="badge-open ms-3">Open</span>
-            <a href="chat_page.html" class="gabung-link ms-auto">
-              Gabung <i class="bi bi-arrow-right"></i>
-            </a>
+            <a href="#" class="gabung-link ms-auto">Gabung <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -352,5 +362,6 @@
 </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
 </body>
 </html>
