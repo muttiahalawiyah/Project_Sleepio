@@ -254,6 +254,12 @@ input:checked + .slider:before {
   -ms-overflow-style: none;
   overflow-x: hidden;
 }
+.avatar-xs {
+  width: 100%;
+  height: 25px;
+  min-width: 25px;
+  max-width: 25px;
+}
 .avatar-sm {
   width: 100%;
   height: 30px;
@@ -532,7 +538,6 @@ input:checked + .slider:before {
   font-size: 24px;
   font-weight: 800;
   color: #fff;
-  border-bottom: 2px solid #fbfbfb;
   padding-bottom: 18px;
   margin-bottom: 0;
 }
@@ -551,18 +556,14 @@ input:checked + .slider:before {
   display: flex;
   -ms-flex-align: start;
   align-items: flex-start;
-  padding: 20px 0;
+  padding: 10px 0;
+}
+
+.chat-border {
   border-bottom: 2px solid #fbfbfb;
+  margin-bottom: 8px;
 }
-.sidebar .discussions .single:hover {
-  border-bottom: 2px solid #2196f3;
-}
-.sidebar .discussions .single:last-of-type {
-  border-bottom: 2px solid transparent !important;
-}
-.sidebar .discussions .single.active {
-  border-bottom: 2px solid #2196f3;
-}
+
 .sidebar .discussions .single.active .material-icons {
   color: #212529;
 }
@@ -617,6 +618,13 @@ input:checked + .slider:before {
   font-weight: 700;
   color: #fff;
   margin-bottom: 8px;
+}
+.sidebar .discussions .single .point h5 {
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-left: 15px;
 }
 .sidebar .discussions .single .data p {
   font-size: 16px;
@@ -2007,4 +2015,3 @@ input:checked + .slider:before {
     padding: 0 12px;
   }
 }
-
