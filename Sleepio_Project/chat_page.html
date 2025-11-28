@@ -1,174 +1,1143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Room Chat</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sleepio - Chat Room</title>
+    <meta name="description" content="#" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Custom Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="css/chat_page.css">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
+      href="https://fonts.cdnfonts.com/css/gt-walsheim-trial"
+      rel="stylesheet"
+    />
 
-<body>
-  <!-- Navbar -->
-  <div id="navbar-container"></div>
-
-<script>
-  fetch("navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar-container").innerHTML = data;
-    });
-</script>
-
-  <!-- Chat Container -->
-  <div class="chat-container">
-    <!-- Notification -->
-    <div class="notification">
-      <span class="notification-badge">Atria, Nibras, Firly joined this room</span>
-    </div>
-
-    <!-- Messages Area -->
-    <div class="messages-area">
-      <!-- Message 1 -->
-      <div class="message">
-        <div class="avatar">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="rgba(255,255,255,0.5)">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-          </svg>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/chat.css" />
+    <!-- Swipe core CSS -->
+    <link rel="stylesheet" href="css/talk.css" />
+    <!-- Favicon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      type="image/png"
+      rel="icon"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="layout">
+        <!-- Start of Navigation -->
+        <div class="navigation">
+          <div class="container">
+            <div class="inside">
+              <div class="nav nav-tab menu">
+                <button class="btn">
+                  <img
+                    src="https://bh-onboarding-app-web-assets-production.s3.amazonaws.com/content/new-landing/night-mode@2x-Desktop/logo-sleepio-header-night.png"
+                    alt="Sleepio Logo"
+                    style="height: 30px; object-fit: contain"
+                  />
+                </button>
+                <a
+                  href="index.html"
+                  class="btn btn-logo"
+                  aria-label="Go to Home"
+                >
+                  <img
+                    src="assets/house-xxl.png"
+                    alt="Sleepio Logo"
+                    style="height: 40px; object-fit: contain; margin-top: 1cm"
+                  />
+                </a>
+                <button class="btn">
+                  <img
+                    src="assets/bubble-chat.png"
+                    alt="Sleepio Logo"
+                    style="height: 40px; object-fit: contain; margin-top: 1cm"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="message-content">
-          <span class="username">Atria</span>
-          <div class="message-bubble">
-            I've been awake for 36 hours now and I'm scared to even try sleeping. My mind just races the moment I lie down.
+        <!-- End of Navigation -->
+        <!-- Start of Sidebar -->
+        <div class="sidebar" id="sidebar">
+          <div class="container">
+            <div class="col-md-12">
+              <div class="tab-content">
+                <!-- Start of Discussions -->
+                <div id="discussions" class="tab-pane fade active show">
+                  <div class="search">
+                    <form class="form-inline position-relative">
+                      <input
+                        type="search"
+                        class="form-control"
+                        id="conversations"
+                        placeholder="Search for support room..."
+                      />
+                      <button type="button" class="btn btn-link loop">
+                        <i class="bi bi-search"></i>
+                      </button>
+                    </form>
+                  </div>
+                  <div class="discussions">
+                    <h1>Support Room</h1>
+                    <div class="list-group" id="chats" role="tablist">
+                      <a
+                        href="#list-chat"
+                        class="filterDiscussions all unread single active chat-border"
+                        id="list-chat-list"
+                        data-toggle="list"
+                        role="tab"
+                      >
+                        <img
+                          class="avatar-xs"
+                          src="assets/community-white.png"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Support Room One"
+                          alt="avatar"
+                        />
+                        <div class="point">
+                          <h5>78 points</h5>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="list-group" id="chats" role="tablist">
+                      <a
+                        href="#list-chat"
+                        class="filterDiscussions all unread single active"
+                        id="list-chat-list"
+                        data-toggle="list"
+                        role="tab"
+                      >
+                        <img
+                          class="avatar-md"
+                          src="assets/insomnia-icon-vector.jpg"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Support Room One"
+                          alt="avatar"
+                        />
+                        <div class="data">
+                          <h5>Matthew's Room</h5>
+                          <span>Mon</span>
+                          <p>What helps me more is knowing I'm...</p>
+                        </div>
+                      </a>
+                      <a
+                        class="filterDiscussions all unread single"
+                        id="list-empty-list"
+                        data-toggle="list"
+                        role="tab"
+                      >
+                        <img
+                          class="avatar-md"
+                          src="assets/7921410.png"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Support Room Two"
+                          alt="avatar"
+                        />
+                        <div class="new bg-pink">
+                          <span>+10</span>
+                        </div>
+                        <div class="data">
+                          <h5>Angga's Room</h5>
+                          <span>Sun</span>
+                          <p>Kepalaku berisik banget jadi gak bisa...</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- End of Discussions -->
+                <!-- Start of Settings -->
+                <div class="tab-pane fade" id="settings">
+                  <div class="settings">
+                    <div class="profile">
+                      <img
+                        class="avatar-xl"
+                        src="dist/img/avatars/avatar-male-1.jpg"
+                        alt="avatar"
+                      />
+                      <h1><a href="#">Michael Knudsen</a></h1>
+                      <span>Helena, Montana</span>
+                      <div class="stats">
+                        <div class="item">
+                          <h2>122</h2>
+                          <h3>Fellas</h3>
+                        </div>
+                        <div class="item">
+                          <h2>305</h2>
+                          <h3>Chats</h3>
+                        </div>
+                        <div class="item">
+                          <h2>1538</h2>
+                          <h3>Posts</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="categories" id="accordionSettings">
+                      <h1>Settings</h1>
+                      <!-- Start of My Account -->
+                      <div class="category">
+                        <a
+                          href="#"
+                          class="title collapsed"
+                          id="headingOne"
+                          data-toggle="collapse"
+                          data-target="#collapseOne"
+                          aria-expanded="true"
+                          aria-controls="collapseOne"
+                        >
+                          <i class="material-icons md-30 online"
+                            >person_outline</i
+                          >
+                          <div class="data">
+                            <h5>My Account</h5>
+                            <p>Update your profile details</p>
+                          </div>
+                          <i class="material-icons">keyboard_arrow_right</i>
+                        </a>
+                        <div
+                          class="collapse"
+                          id="collapseOne"
+                          aria-labelledby="headingOne"
+                          data-parent="#accordionSettings"
+                        >
+                          <div class="content">
+                            <div class="upload">
+                              <div class="data">
+                                <img
+                                  class="avatar-xl"
+                                  src="dist/img/avatars/avatar-male-1.jpg"
+                                  alt="image"
+                                />
+                                <label>
+                                  <input type="file" />
+                                  <span class="btn button">Upload avatar</span>
+                                </label>
+                              </div>
+                              <p>
+                                For best results, use an image at least 256px by
+                                256px in either .jpg or .png format!
+                              </p>
+                            </div>
+                            <form>
+                              <div class="parent">
+                                <div class="field">
+                                  <label for="firstName"
+                                    >First name <span>*</span></label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="firstName"
+                                    placeholder="First name"
+                                    value="Michael"
+                                    required
+                                  />
+                                </div>
+                                <div class="field">
+                                  <label for="lastName"
+                                    >Last name <span>*</span></label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="lastName"
+                                    placeholder="Last name"
+                                    value="Knudsen"
+                                    required
+                                  />
+                                </div>
+                              </div>
+                              <div class="field">
+                                <label for="email">Email <span>*</span></label>
+                                <input
+                                  type="email"
+                                  class="form-control"
+                                  id="email"
+                                  placeholder="Enter your email address"
+                                  value="michael@gmail.com"
+                                  required
+                                />
+                              </div>
+                              <div class="field">
+                                <label for="password">Password</label>
+                                <input
+                                  type="password"
+                                  class="form-control"
+                                  id="password"
+                                  placeholder="Enter a new password"
+                                  value="password"
+                                  required
+                                />
+                              </div>
+                              <div class="field">
+                                <label for="location">Location</label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="location"
+                                  placeholder="Enter your location"
+                                  value="Helena, Montana"
+                                  required
+                                />
+                              </div>
+                              <button class="btn btn-link w-100">
+                                Delete Account
+                              </button>
+                              <button type="submit" class="btn button w-100">
+                                Apply
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End of My Account -->
+                      <!-- Start of Chat History -->
+                      <div class="category">
+                        <a
+                          href="#"
+                          class="title collapsed"
+                          id="headingTwo"
+                          data-toggle="collapse"
+                          data-target="#collapseTwo"
+                          aria-expanded="true"
+                          aria-controls="collapseTwo"
+                        >
+                          <i class="material-icons md-30 online"
+                            >mail_outline</i
+                          >
+                          <div class="data">
+                            <h5>Chats</h5>
+                            <p>Check your chat history</p>
+                          </div>
+                          <i class="material-icons">keyboard_arrow_right</i>
+                        </a>
+                        <div
+                          class="collapse"
+                          id="collapseTwo"
+                          aria-labelledby="headingTwo"
+                          data-parent="#accordionSettings"
+                        >
+                          <div class="content layer">
+                            <div class="history">
+                              <p>
+                                When you clear your conversation history, the
+                                messages will be deleted from your own device.
+                              </p>
+                              <p>
+                                The messages won't be deleted or cleared on the
+                                devices of the people you chatted with.
+                              </p>
+                              <div class="custom-control custom-checkbox">
+                                <input
+                                  type="checkbox"
+                                  class="custom-control-input"
+                                  id="same-address"
+                                />
+                                <label
+                                  class="custom-control-label"
+                                  for="same-address"
+                                  >Hide will remove your chat history from the
+                                  recent list.</label
+                                >
+                              </div>
+                              <div class="custom-control custom-checkbox">
+                                <input
+                                  type="checkbox"
+                                  class="custom-control-input"
+                                  id="save-info"
+                                />
+                                <label
+                                  class="custom-control-label"
+                                  for="save-info"
+                                  >Delete will remove your chat history from the
+                                  device.</label
+                                >
+                              </div>
+                              <button type="submit" class="btn button w-100">
+                                Clear blah-blah
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End of Chat History -->
+                      <!-- Start of Notifications Settings -->
+                      <div class="category">
+                        <a
+                          href="#"
+                          class="title collapsed"
+                          id="headingThree"
+                          data-toggle="collapse"
+                          data-target="#collapseThree"
+                          aria-expanded="true"
+                          aria-controls="collapseThree"
+                        >
+                          <i class="material-icons md-30 online"
+                            >notifications_none</i
+                          >
+                          <div class="data">
+                            <h5>Notifications</h5>
+                            <p>Turn notifications on or off</p>
+                          </div>
+                          <i class="material-icons">keyboard_arrow_right</i>
+                        </a>
+                        <div
+                          class="collapse"
+                          id="collapseThree"
+                          aria-labelledby="headingThree"
+                          data-parent="#accordionSettings"
+                        >
+                          <div class="content no-layer">
+                            <div class="set">
+                              <div class="details">
+                                <h5>Desktop Notifications</h5>
+                                <p>
+                                  You can set up Swipe to receive notifications
+                                  when you have new messages.
+                                </p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" checked />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                            <div class="set">
+                              <div class="details">
+                                <h5>Unread Message Badge</h5>
+                                <p>
+                                  If enabled shows a red badge on the Swipe app
+                                  icon when you have unread messages.
+                                </p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" checked />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                            <div class="set">
+                              <div class="details">
+                                <h5>Taskbar Flashing</h5>
+                                <p>
+                                  Flashes the Swipe app on mobile in your
+                                  taskbar when you have new notifications.
+                                </p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                            <div class="set">
+                              <div class="details">
+                                <h5>Notification Sound</h5>
+                                <p>
+                                  Set the app to alert you via notification
+                                  sound when you have unread messages.
+                                </p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" checked />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                            <div class="set">
+                              <div class="details">
+                                <h5>Vibrate</h5>
+                                <p>
+                                  Vibrate when receiving new messages (Ensure
+                                  system vibration is also enabled).
+                                </p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                            <div class="set">
+                              <div class="details">
+                                <h5>Turn On Lights</h5>
+                                <p>
+                                  When someone send you a text message you will
+                                  receive alert via notification light.
+                                </p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End of Notifications Settings -->
+                      <!-- Start of Connections -->
+                      <div class="category">
+                        <a
+                          href="#"
+                          class="title collapsed"
+                          id="headingFour"
+                          data-toggle="collapse"
+                          data-target="#collapseFour"
+                          aria-expanded="true"
+                          aria-controls="collapseFour"
+                        >
+                          <i class="material-icons md-30 online">sync</i>
+                          <div class="data">
+                            <h5>Connections</h5>
+                            <p>Sync your social accounts</p>
+                          </div>
+                          <i class="material-icons">keyboard_arrow_right</i>
+                        </a>
+                        <div
+                          class="collapse"
+                          id="collapseFour"
+                          aria-labelledby="headingFour"
+                          data-parent="#accordionSettings"
+                        >
+                          <div class="content">
+                            <div class="app">
+                              <img
+                                src="dist/img/integrations/slack.svg"
+                                alt="app"
+                              />
+                              <div class="permissions">
+                                <h5>Skrill</h5>
+                                <p>Read, Write, Comment</p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" checked />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                            <div class="app">
+                              <img
+                                src="dist/img/integrations/dropbox.svg"
+                                alt="app"
+                              />
+                              <div class="permissions">
+                                <h5>Dropbox</h5>
+                                <p>Read, Write, Upload</p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" checked />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                            <div class="app">
+                              <img
+                                src="dist/img/integrations/drive.svg"
+                                alt="app"
+                              />
+                              <div class="permissions">
+                                <h5>Google Drive</h5>
+                                <p>No permissions set</p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                            <div class="app">
+                              <img
+                                src="dist/img/integrations/trello.svg"
+                                alt="app"
+                              />
+                              <div class="permissions">
+                                <h5>Trello</h5>
+                                <p>No permissions set</p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End of Connections -->
+                      <!-- Start of Appearance Settings -->
+                      <div class="category">
+                        <a
+                          href="#"
+                          class="title collapsed"
+                          id="headingFive"
+                          data-toggle="collapse"
+                          data-target="#collapseFive"
+                          aria-expanded="true"
+                          aria-controls="collapseFive"
+                        >
+                          <i class="material-icons md-30 online">colorize</i>
+                          <div class="data">
+                            <h5>Appearance</h5>
+                            <p>Customize the look of Swipe</p>
+                          </div>
+                          <i class="material-icons">keyboard_arrow_right</i>
+                        </a>
+                        <div
+                          class="collapse"
+                          id="collapseFive"
+                          aria-labelledby="headingFive"
+                          data-parent="#accordionSettings"
+                        >
+                          <div class="content no-layer">
+                            <div class="set">
+                              <div class="details">
+                                <h5>Turn Off Lights</h5>
+                                <p>
+                                  The dark mode is applied to core areas of the
+                                  app that are normally displayed as light.
+                                </p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" />
+                                <span class="slider round mode"></span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End of Appearance Settings -->
+                      <!-- Start of Language -->
+                      <div class="category">
+                        <a
+                          href="#"
+                          class="title collapsed"
+                          id="headingSix"
+                          data-toggle="collapse"
+                          data-target="#collapseSix"
+                          aria-expanded="true"
+                          aria-controls="collapseSix"
+                        >
+                          <i class="material-icons md-30 online">language</i>
+                          <div class="data">
+                            <h5>Language</h5>
+                            <p>Select preferred language</p>
+                          </div>
+                          <i class="material-icons">keyboard_arrow_right</i>
+                        </a>
+                        <div
+                          class="collapse"
+                          id="collapseSix"
+                          aria-labelledby="headingSix"
+                          data-parent="#accordionSettings"
+                        >
+                          <div class="content layer">
+                            <div class="language">
+                              <label for="country">Language</label>
+                              <select
+                                class="custom-select"
+                                id="country"
+                                required
+                              >
+                                <option value="">Select an language...</option>
+                                <option>English, UK</option>
+                                <option>English, US</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End of Language -->
+                      <!-- Start of Privacy & Safety -->
+                      <div class="category">
+                        <a
+                          href="#"
+                          class="title collapsed"
+                          id="headingSeven"
+                          data-toggle="collapse"
+                          data-target="#collapseSeven"
+                          aria-expanded="true"
+                          aria-controls="collapseSeven"
+                        >
+                          <i class="material-icons md-30 online"
+                            >lock_outline</i
+                          >
+                          <div class="data">
+                            <h5>Privacy & Safety</h5>
+                            <p>Control your privacy settings</p>
+                          </div>
+                          <i class="material-icons">keyboard_arrow_right</i>
+                        </a>
+                        <div
+                          class="collapse"
+                          id="collapseSeven"
+                          aria-labelledby="headingSeven"
+                          data-parent="#accordionSettings"
+                        >
+                          <div class="content no-layer">
+                            <div class="set">
+                              <div class="details">
+                                <h5>Keep Me Safe</h5>
+                                <p>
+                                  Automatically scan and delete direct messages
+                                  you receive from everyone that contain explict
+                                  content.
+                                </p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                            <div class="set">
+                              <div class="details">
+                                <h5>My Friends Are Nice</h5>
+                                <p>
+                                  If enabled scans direct messages from everyone
+                                  unless they are listed as your friend.
+                                </p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" checked />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                            <div class="set">
+                              <div class="details">
+                                <h5>Everyone can add me</h5>
+                                <p>
+                                  If enabled anyone in or out your friends of
+                                  friends list can send you a friend request.
+                                </p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" checked />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                            <div class="set">
+                              <div class="details">
+                                <h5>Friends of Friends</h5>
+                                <p>
+                                  Only your friends or your mutual friends will
+                                  be able to send you a friend reuqest.
+                                </p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" checked />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                            <div class="set">
+                              <div class="details">
+                                <h5>Data to Improve</h5>
+                                <p>
+                                  This settings allows us to use and process
+                                  information for analytical purposes.
+                                </p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                            <div class="set">
+                              <div class="details">
+                                <h5>Data to Customize</h5>
+                                <p>
+                                  This settings allows us to use your
+                                  information to customize Swipe for you.
+                                </p>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox" />
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End of Privacy & Safety -->
+                      <!-- Start of Logout -->
+                      <div class="category">
+                        <a href="sign-in.html" class="title collapsed">
+                          <i class="material-icons md-30 online"
+                            >power_settings_new</i
+                          >
+                          <div class="data">
+                            <h5>Power Off</h5>
+                            <p>Log out of your account</p>
+                          </div>
+                          <i class="material-icons">keyboard_arrow_right</i>
+                        </a>
+                      </div>
+                      <!-- End of Logout -->
+                    </div>
+                  </div>
+                </div>
+                <!-- End of Settings -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of Sidebar -->
+        <!-- Start of Add Friends -->
+        <div
+          class="modal fade"
+          id="exampleModalCenter"
+          tabindex="-1"
+          role="dialog"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="requests">
+              <div class="title">
+                <h1>Add your friends</h1>
+                <button
+                  type="button"
+                  class="btn"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <i class="material-icons">close</i>
+                </button>
+              </div>
+              <div class="content">
+                <form>
+                  <div class="form-group">
+                    <label for="user">Username:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="user"
+                      placeholder="Add recipient..."
+                      required
+                    />
+                    <div class="user" id="contact">
+                      <img
+                        class="avatar-sm"
+                        src="dist/img/avatars/avatar-female-5.jpg"
+                        alt="avatar"
+                      />
+                      <h5>Keith Morris</h5>
+                      <button class="btn">
+                        <i class="material-icons">close</i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="welcome">Message:</label>
+                    <textarea
+                      class="text-control"
+                      id="welcome"
+                      placeholder="Send your welcome message..."
+                    >
+Hi Keith, I'd like to add you as a contact.</textarea
+                    >
+                  </div>
+                  <button type="submit" class="btn button w-100">
+                    Send Friend Request
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of Add Friends -->
+        <!-- Start of Create Chat -->
+        <div
+          class="modal fade"
+          id="startnewchat"
+          tabindex="-1"
+          role="dialog"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="requests">
+              <div class="title">
+                <h1>Start new chat</h1>
+                <button
+                  type="button"
+                  class="btn"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <i class="material-icons">close</i>
+                </button>
+              </div>
+              <div class="content">
+                <form>
+                  <div class="form-group">
+                    <label for="participant">Recipient:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="participant"
+                      placeholder="Add recipient..."
+                      required
+                    />
+                    <div class="user" id="recipient">
+                      <img
+                        class="avatar-sm"
+                        src="dist/img/avatars/avatar-female-5.jpg"
+                        alt="avatar"
+                      />
+                      <h5>Keith Morris</h5>
+                      <button class="btn">
+                        <i class="material-icons">close</i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="topic">Topic:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="topic"
+                      placeholder="What's the topic?"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea
+                      class="text-control"
+                      id="message"
+                      placeholder="Send your welcome message..."
+                    >
+Hmm, are you friendly?</textarea
+                    >
+                  </div>
+                  <button type="submit" class="btn button w-100">
+                    Start New Chat
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of Create Chat -->
+        <div class="main">
+          <div class="tab-content" id="nav-tabContent">
+            <!-- Start of Babble -->
+            <div
+              class="babble tab-pane fade active show"
+              id="list-chat"
+              role="tabpanel"
+              aria-labelledby="list-chat-list"
+            >
+              <!-- Start of Chat -->
+              <div class="chat" id="chat1">
+                <div class="top">
+                  <div class="container">
+                    <div class="col-md-12">
+                      <div class="inside">
+                        <a href="#"
+                          ><img
+                            class="avatar-md"
+                            src="assets/insomnia-icon-vector.jpg"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Support Rooms One"
+                            alt="avatar"
+                        /></a>
+                        <div class="data">
+                          <h5><a href="#">Matthew's Room</a></h5>
+                          <span>Matthew, Atria, Nibras, Firly</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="content" id="content">
+                  <div class="container">
+                    <div class="col-md-12">
+                      <div class="date">
+                        <hr />
+                        <span>Firly joined this room</span>
+                        <hr />
+                      </div>
+                      <div class="message">
+                        <img
+                          class="avatar-md"
+                          src="assets/hijab-girl1.jpg"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Atria"
+                          alt="avatar"
+                        />
+                        <div class="text-main">
+                          <div class="text-group">
+                            <div class="text">
+                              <p>
+                                I've been awake for 36 hours now and I'm scared
+                                to even try sleeping. My mind just races the
+                                moment I lie down.
+                              </p>
+                            </div>
+                          </div>
+                          <span>Atria, 01:46 AM</span>
+                        </div>
+                      </div>
+                      <div class="message">
+                        <img
+                          class="avatar-md"
+                          src="assets/hijab-girl2.jpg"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Nibras"
+                          alt="avatar"
+                        />
+                        <div class="text-main">
+                          <div class="text-group">
+                            <div class="text">
+                              <p>
+                                I feel you! Last night I counted 4 different
+                                times I woke up. Each time my brain started
+                                replaying every awkward thing I've ever said.
+                              </p>
+                            </div>
+                          </div>
+                          <span>Nibras, 01:48 AM</span>
+                        </div>
+                      </div>
+                      <div class="message me">
+                        <div class="text-main">
+                          <div class="text-group me">
+                            <div class="text me">
+                              <p>
+                                Have you guys tried the 4-7-8 breathing
+                                technique?
+                              </p>
+                            </div>
+                          </div>
+                          <div class="text-group me">
+                            <div class="text me">
+                              <p>
+                                It doesn't always work for me, but sometimes it
+                                helps quiet my thoughts a bit.
+                              </p>
+                            </div>
+                          </div>
+                          <span>01:50 AM</span>
+                        </div>
+                      </div>
+                      <div class="message">
+                        <img
+                          class="avatar-md"
+                          src="assets/hijab-girl1.jpg"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Atria"
+                          alt="avatar"
+                        />
+                        <div class="text-main">
+                          <div class="text-group">
+                            <div class="text">
+                              <p>I've tried that.</p>
+                            </div>
+                          </div>
+                          <span>Atria, 01:52 AM</span>
+                        </div>
+                      </div>
+                      <div class="message">
+                        <img
+                          class="avatar-md"
+                          src="assets/hijab-girl1.jpg"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Atria"
+                          alt="avatar"
+                        />
+                        <div class="text-main">
+                          <div class="text-group">
+                            <div class="text">
+                              <p>
+                                Sometimes it helps, sometimes my brain just
+                                fights it.
+                              </p>
+                            </div>
+                          </div>
+                          <span>Atria, 01:52 AM</span>
+                        </div>
+                      </div>
+                      <div class="message">
+                        <img
+                          class="avatar-md"
+                          src="assets/hijab-girl1.jpg"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Atria"
+                          alt="avatar"
+                        />
+                        <div class="text-main">
+                          <div class="text-group">
+                            <div class="text">
+                              <p>
+                                What helps me more is knowing I'm not alone in
+                                this struggle.
+                              </p>
+                            </div>
+                          </div>
+                          <span>Atria, 01:52 AM</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container">
+                  <div class="col-md-12">
+                    <div class="bottom">
+                      <form class="position-relative w-100">
+                        <textarea
+                          class="form-control"
+                          placeholder="Start typing for reply..."
+                          rows="1"
+                        ></textarea>
+                      </form>
+                      <button class="btn">
+                        <img
+                          src="assets/send-white-icon.png"
+                          alt="Sleepio Logo"
+                          style="height: 50px; object-fit: contain"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End of Chat -->
+              <!-- End of Babble -->
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- Message 2 -->
-      <div class="message">
-        <div class="avatar">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="rgba(255,255,255,0.5)">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-          </svg>
-        </div>
-        <div class="message-content">
-          <span class="username">Sayyidah</span>
-          <div class="message-bubble">
-            I feel you! Last night I counted 4 different times I woke up. Each time my brain started replaying every awkward thing I've ever said.
-          </div>
-        </div>
-      </div>
-
-      <!-- Message 3 -->
-      <div class="message">
-        <div class="avatar">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="rgba(255,255,255,0.5)">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-          </svg>
-        </div>
-        <div class="message-content">
-          <span class="username">Nibras</span>
-          <div class="message-bubble">
-            Have you guys tried the 4-7-8 breathing technique? It doesn't always work for me, but sometimes it helps quiet my thoughts a bit.
-          </div>
-        </div>
-      </div>
-
-      <!-- Message 4 (Own) -->
-      <div class="message own">
-        <div class="avatar">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="rgba(255,255,255,0.5)">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-          </svg>
-        </div>
-        <div class="message-content">
-          <span class="username">Firly</span>
-          <div class="message-bubble">
-            I've tried that. Sometimes it helps, sometimes my brain just fights it. What helps me more is knowing I'm not alone in this struggle.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Input Area -->
-    <div class="input-area">
-      <button class="input-btn">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="12" y1="5" x2="12" y2="19"></line>
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-        </svg>
-      </button>
-      
-      <button class="input-btn">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"></circle>
-          <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-          <line x1="9" y1="9" x2="9.01" y2="9"></line>
-          <line x1="15" y1="9" x2="15.01" y2="9"></line>
-        </svg>
-      </button>
-
-      <input type="text" class="message-input" placeholder="Type a message...">
-
-      <button class="send-btn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <div id="footer-container"></div>
-
-<script>
-  fetch("footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-container").innerHTML = data;
-    });
-</script>
-
-  <script>
-    // Get references
-    const messagesWrapper = document.querySelector('.messages-wrapper');
-    const input = document.querySelector('.message-input');
-    const sendBtn = document.querySelector('.send-btn');
-
-    function sendMessage() {
-      const message = input.value.trim();
-      if (message) {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = 'message own';
-        messageDiv.innerHTML = `
-          <div class="avatar">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="rgba(255,255,255,0.5)">
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-            </svg>
-          </div>
-          <div class="message-content">
-            <span class="username">You</span>
-            <div class="message-bubble">${message}</div>
-          </div>
-        `;
-        messagesWrapper.appendChild(messageDiv);
-        input.value = '';
+      <!-- Layout -->
+    </main>
+    <!-- Bootstrap/Swipe core JavaScript
+		================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script
+      src="dist/js/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="dist/js/vendor/jquery-slim.min.js"><\/script>'
+        );
+    </script>
+    <script src="dist/js/vendor/popper.min.js"></script>
+    <script src="dist/js/swipe.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script>
+      function scrollToBottom(el) {
+        el.scrollTop = el.scrollHeight;
       }
-    }
-
-    input.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        sendMessage();
-      }
-    });
-
-    sendBtn.addEventListener('click', sendMessage);
-  </script>
-</body>
+      scrollToBottom(document.getElementById("content"));
+    </script>
+  </body>
 </html>
