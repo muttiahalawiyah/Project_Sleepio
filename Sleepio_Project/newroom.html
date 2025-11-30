@@ -82,105 +82,100 @@
                 <!-- To make this form functional, sign up at-->
                 <!-- https://startbootstrap.com/solution/contact-forms-->
                 <!-- to get an API token!-->
-                <form id="contactForm" action="Community_Page.html" method="get">
-                  <!-- Age input-->
+                <form
+                  id="contactForm"
+                  action="Community_Page.html"
+                  method="get"
+                  novalidate
+                >
+                  <!-- Age input -->
                   <div class="form-floating mb-3">
                     <select
                       class="form-select"
                       id="age"
                       name="age"
                       aria-label="Select your age"
-                      data-sb-validations="required"
+                      required
                     >
-                      <!-- empty disabled placeholder → makes label float correctly -->
                       <option value="" selected disabled>
                         Click to select
                       </option>
-                      <option value="0">Prefer not to say</option>
-                      <option value="option">15</option>
-                      <option value="option">16</option>
-                      <option value="option">17</option>
-                      <option value="option">18</option>
-                      <option value="option">19</option>
-                      <option value="option">20</option>
-                      <option value="option">21</option>
-                      <option value="option">22</option>
-                      <option value="option">23</option>
-                      <option value="option">24</option>
-                      <option value="option">25</option>
-                      <option value="option">25</option>
-                      <option value="option">27</option>
-                      <option value="option">28</option>
-                      <option value="option">29</option>
-                      <option value="option">30</option>
-                      <option value="option">31</option>
-                      <option value="option">32</option>
-                      <option value="option">33</option>
-                      <option value="option">34</option>
-                      <option value="option">35</option>
-                      <option value="option">36</option>
-                      <option value="option">37</option>
-                      <option value="option">38</option>
-                      <option value="option">39</option>
-                      <option value="option">40</option>
+                      <option>15</option>
+                      <option>16</option>
+                      <option>17</option>
+                      <option>18</option>
+                      <option>19</option>
+                      <option>20</option>
+                      <option>21</option>
+                      <option>22</option>
+                      <option>23</option>
+                      <option>24</option>
+                      <option>25</option>
+                      <option>26</option>
+                      <option>27</option>
+                      <option>28</option>
+                      <option>29</option>
+                      <option>30</option>
+                      <option>31</option>
+                      <option>32</option>
+                      <option>33</option>
+                      <option>34</option>
+                      <option>35</option>
+                      <option>36</option>
+                      <option>37</option>
+                      <option>38</option>
+                      <option>39</option>
+                      <option>40</option>
                     </select>
                     <label for="age">Select your age</label>
-
-                    <div
-                      class="invalid-feedback"
-                      data-sb-feedback="age:required"
-                    >
-                      Age is required.
-                    </div>
+                    <div class="invalid-feedback">Age is required.</div>
                   </div>
 
-                  <!-- Name input-->
+                  <!-- Name input -->
                   <div class="form-floating mb-3">
                     <input
                       class="form-control"
-                      id="name"
+                      id="roomName"
+                      name="roomName"
                       type="text"
                       placeholder="Enter your name..."
-                      data-sb-validations="required"
+                      required
+                      minlength="3"
+                      maxlength="50"
                     />
-                    <label for="name">Room Name</label>
-                    <div
-                      class="invalid-feedback"
-                      data-sb-feedback="name:required"
-                    >
-                      A name is required.
+                    <label for="roomName">Room Name</label>
+                    <div class="invalid-feedback">
+                      Room Name is required (3–50 chars).
                     </div>
                   </div>
 
-                  <!-- Message input-->
+                  <!-- Message input -->
                   <div class="form-floating mb-3">
                     <textarea
                       class="form-control"
-                      id="message"
-                      type="text"
+                      id="roomDescription"
+                      name="roomDescription"
                       placeholder="Enter your message here..."
                       style="height: 10rem"
-                      data-sb-validations="required"
+                      required
+                      minlength="10"
+                      maxlength="300"
                     ></textarea>
-                    <label for="message">Room Description</label>
-                    <div
-                      class="invalid-feedback"
-                      data-sb-feedback="message:required"
-                    >
-                      A description is required.
+                    <label for="roomDescription">Room Description</label>
+                    <div class="invalid-feedback">
+                      Description is required (min 10 chars).
                     </div>
                   </div>
 
-                  <!-- Country input-->
+                  <!-- Country input -->
                   <div class="form-floating mb-3">
                     <select
                       class="form-select"
-                      id="age"
-                      name="age"
-                      aria-label="Select your age"
-                      data-sb-validations="required"
+                      id="country"
+                      name="country"
+                      aria-label="Select your country"
+                      required
                     >
-                      <!-- empty disabled placeholder → makes label float correctly -->
                       <option value="" selected disabled>
                         Click to select
                       </option>
@@ -449,15 +444,10 @@
                       <option value="ZM">Zambia</option>
                       <option value="ZW">Zimbabwe</option>
                     </select>
-                    <label for="age">Select your country</label>
-
-                    <div
-                      class="invalid-feedback"
-                      data-sb-feedback="age:required"
-                    >
-                      Country is required.
-                    </div>
+                    <label for="country">Select your country</label>
+                    <div class="invalid-feedback">Country is required.</div>
                   </div>
+
                   <!-- Submit Button -->
                   <div class="d-grid">
                     <button
@@ -486,6 +476,8 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/newroom.js"></script>
     <script>
       fetch("navbar.html")
         .then((response) => response.text())
